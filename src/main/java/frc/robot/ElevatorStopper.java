@@ -8,7 +8,7 @@ public class ElevatorStopper {
   private StopperState mState;
 
   public ElevatorStopper() {
-    stopperSolenoid.set(false);
+    stopperSolenoid.set(false); //set to true and then set button to reverse so true = false jack pls 
     mState = StopperState.STOP;
   }
 
