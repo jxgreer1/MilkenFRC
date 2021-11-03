@@ -59,11 +59,14 @@ public final class Constants {
     public static final double kAntiTipThreshold = 15;
 
     public static final double kMaxNativeVel = 1685;
+    
+    //(1023 * duty-cycle) / sensor-velocity-sensor-units-per-100ms
     public static final double kDriveKp =  7.0 * (0.1 * 1023.0) / (1400.0); //7
     public static final double kDriveKi = 0;
     public static final double kDriveKD = 3.0 * kDriveKp; //3.0
     public static final double kDriveKf = 1023.0 / DRIVE.kMaxNativeVel;
 
+    //whats the point of the math here????????????????????????
     public static final int kMotionMagicStraightVel = (int) (0.65 * DRIVE.kMaxNativeVel); //Increase to drive straight faster, decrease to slow
     public static final int kMotionMagicStraightAccel = (int) (0.4 * DRIVE.kMaxNativeVel); //Increase to drive straight faster, decrease to slow
 

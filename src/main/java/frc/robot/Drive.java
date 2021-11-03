@@ -73,6 +73,8 @@ public class Drive {
     rightMaster.config_kD(0, DRIVE.kDriveKD);
 
     /* Set acceleration and vcruise velocity - see documentation */
+    //help oh please god help
+    //what do these accomplish, and why should i give a shit about them - question for swerdlow
     leftMaster.configMotionCruiseVelocity(DRIVE.kMotionMagicStraightVel);
     leftMaster.configMotionAcceleration(DRIVE.kMotionMagicStraightAccel);
     leftMaster.configAllowableClosedloopError(0, 1);
