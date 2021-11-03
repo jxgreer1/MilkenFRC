@@ -33,6 +33,7 @@ public final class Constants {
 
   public static class INPUT {
 
+    //confirmed - no hood :amogus:
     public static final int attackMode = 2;
     public static final int defenseMode = 12;
     public static final int climbOn = 7;
@@ -40,14 +41,17 @@ public final class Constants {
     public static final int elevatorUp = 3;
     public static final int elevatorDown = 5;
     public static final int limeLight = 1;
+    //limelight is a lie, also are any of these even fuckin used???????????
 
     // public static final int button 1 is shooterControlEnable and forward and back tics for speed management. hood pov
   }
 
   public static class DRIVE {
+    //what da hell is ramp rate???????????????
     public static final double kRampRate = 0.75;
     public static final double kTurnRampRate = 0.9;
 
+    //need to figure this out on new robot :(
     public static final double kWheelDiameterInches = 5.9575;
     public static final double kWheelCircumference = kWheelDiameterInches * kPi;
 
@@ -56,14 +60,17 @@ public final class Constants {
     public static final boolean kRightMasterInverted = true;
     public static final boolean kRightSlaveInverted = true;
 
+    //degrees (or radians) that if robot above this, enable anti tip thingy
     public static final double kAntiTipThreshold = 15;
 
+    //where get this???????? what this mean?????????? is this units per 100ms???????????
     public static final double kMaxNativeVel = 1685;
-    
-    //(1023 * duty-cycle) / sensor-velocity-sensor-units-per-100ms
-    public static final double kDriveKp =  7.0 * (0.1 * 1023.0) / (1400.0); //7
+
+    //(1023 * duty-cycle) / sensor-velocity-sensor-units-per-100ms ---- for Kf??? or Kp???????????
+    //for Kd, why multiply by kP????????
+    public static final double kDriveKp =  7.0 * (0.1 * 1023.0) / (1400.0); //7.0
     public static final double kDriveKi = 0;
-    public static final double kDriveKD = 3.0 * kDriveKp; //3.0
+    public static final double kDriveKD = 3.0 * kDriveKp; //3.0 
     public static final double kDriveKf = 1023.0 / DRIVE.kMaxNativeVel;
 
     //whats the point of the math here????????????????????????
@@ -82,6 +89,7 @@ public final class Constants {
 
   public static class SHOOTER {
 
+    //how do you even get these values???? using the equations???????
     public static final double kFlywheelMaxVel = 5100.0;
     public static final double kFlywheelKp = 0.0016;
     public static final double kFlywheelKi = 0.0;

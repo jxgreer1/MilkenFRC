@@ -80,6 +80,7 @@ public class Shooter {
 
   public void setHoodPos(double pos) {
     pos = MkUtil.limit(pos, SHOOTER.kMaxHoodPos, 0);
+    //what does this do???????????? i dont know math?????????????
     mHoodSparkMax.set(MkUtil.limitAbsolute((pos - hEncoder.getPosition()) * SHOOTER.kHoodKp, SHOOTER.kMaxHoodOutput));
     mHoodSetpoint = pos;
   }
