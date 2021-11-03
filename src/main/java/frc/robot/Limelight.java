@@ -63,7 +63,7 @@ public class Limelight {
       Shooter.getInstance().setShootingMode(ignoreAim ? Shooter.ShootingMode.AUTO_SHOOTING_IGNORING_AIM : Shooter.ShootingMode.AUTO_SHOOTING_AIMED);
     } else {
       Shooter.getInstance().setShootingMode(Shooter.ShootingMode.AUTO_AIMIMG);
-      ElevatorStopper.getInstance().setStopper(ElevatorStopper.StopperState.STOP); //gos instead stpo since reversed //not supposed to be here
+      ElevatorStopper.getInstance().setStopper(ElevatorStopper.StopperState.STOP); //gos instead stop since reversed //not supposed to be here
     }
 
     Intake.getInstance().setIntakeRoller(0.0);
