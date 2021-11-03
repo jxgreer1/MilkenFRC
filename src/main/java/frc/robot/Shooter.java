@@ -37,6 +37,7 @@ public class Shooter {
     mShooterSparkMaxLeft.enableVoltageCompensation(12.0);
     mShooterSparkMaxRight.enableVoltageCompensation(12.0);
 
+    //what da hell boi
     sEncoder.setVelocityConversionFactor(2.0 / 3.0);
     sEncoder = mShooterSparkMaxLeft.getEncoder();
 
