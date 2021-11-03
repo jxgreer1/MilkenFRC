@@ -172,7 +172,6 @@ public class Drive {
   public void magicTurnInPlaceUpdate() {
     double error_deg = mPeriodicIO.yaw_continouous - magicTarget;
     double error_rad = Math.toRadians(error_deg);
-    //what is this :(
     double delta_v = 22.97 * error_rad / (2 * 0.95);
 
     double left_out = MkUtil.inchesToNative(-delta_v) + leftMaster.getSelectedSensorPosition();
