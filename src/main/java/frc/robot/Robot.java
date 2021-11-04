@@ -206,9 +206,9 @@ public class Robot extends TimedRobot {
       }
 
       if (mOperatorJoystick.getRawButton(Constants.INPUT.elevatorUp)) {
-        mElevator.setElevatorOutput(.420);
+        mElevator.setElevatorOutput(.3); //nice
       } else if (mOperatorJoystick.getRawButton(Constants.INPUT.elevatorDown)) {
-        mElevator.setElevatorOutput(-.420);
+        mElevator.setElevatorOutput(-.3);
       } else if (!mIsInAttackMode) {
         mElevator.setElevatorOutput(0);
       }

@@ -91,7 +91,7 @@ public final class Constants {
 
     //how do you even get these values???? using the equations???????
     public static final double kFlywheelMaxVel = 5100.0;
-    public static final double kFlywheelKp = 0.0016;
+    public static final double kFlywheelKp = 0.0019; //.0016 bigger is better
     public static final double kFlywheelKi = 0.0;
     public static final double kFlywheelKd = 0.0094;
     public static final double kFlywheelKf = 1.0 / kFlywheelMaxVel;
