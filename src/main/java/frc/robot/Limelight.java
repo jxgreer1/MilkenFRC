@@ -57,12 +57,13 @@ public class Limelight {
     Shooter.getInstance().setHoodPos(limit(hoodDist, -3.25, 0));
     double distance_mod = Constants.VISION.kElevatorDistanceConst * Limelight.getInstance().getDistance();
     double rpm_mod = VISION.kElevatorRpmConst * (RPM - Shooter.getInstance().getShooterRPM());
-    Elevator.getInstance().setElevatorOutput(limit(0.60 - distance_mod, 0.2, 1.0)); //what the hell does this accomplish, imma ask swerd maybe, also maybe gonna remove it and set it to 1 instead of limit math thing
-    if ((ignoreAim || inRange()) && Math.abs(Shooter.getInstance().getShooterRPM() - RPM) < 30) {
-      ElevatorStopper.getInstance().setStopper(ElevatorStopper.StopperState.GO);
+    Elevator.getInstance().setElevatorOutput(limit(0.43 - distance_mod, 0.2, 1.0)); // 60  this ---- what the hell does this accomplish, imma ask swerd maybe, also maybe gonna remove it and set it to 1 instead of limit math thing
+    if ((ignoreAim || inRange()) && Math.abs(Shooter.getInstance().getShooterRPM() - RPM) < 30) { // 30 base
+      ElevatorStopper.getInstance().setStopper(ElevatorStopper.StopperState.GO); //stops instead go since reversed
       Shooter.getInstance().setShootingMode(ignoreAim ? Shooter.ShootingMode.AUTO_SHOOTING_IGNORING_AIM : Shooter.ShootingMode.AUTO_SHOOTING_AIMED);
     } else {
       Shooter.getInstance().setShootingMode(Shooter.ShootingMode.AUTO_AIMIMG);
+      ElevatorStopper.getInstance().setStopper(ElevatorStopper.StopperState.STOP); //gos instead stop since reversed //not supposed to be here
     }
 
     Intake.getInstance().setIntakeRoller(0.0);
@@ -73,6 +74,7 @@ public class Limelight {
     double horizontal_angle = tx.getDouble(0.0);
     double turn_output = 0;
     if (Math.abs(horizontal_angle) > VISION.kAimAngleDeadband) {
+      //how the hell do you know trapezoid profile and where did you even learn it 
       TrapezoidProfile trap = new TrapezoidProfile(constraints, new TrapezoidProfile.State(0, 0));
       double turn_controllout_out = m_turn_controller.calculate(-horizontal_angle, 0);
       double feedforward = ((1.0) / (VISION.kMaxAimAngularVel)) * trap.calculate(Constants.kDt).velocity;

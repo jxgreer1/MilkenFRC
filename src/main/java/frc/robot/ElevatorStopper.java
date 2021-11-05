@@ -8,7 +8,7 @@ public class ElevatorStopper {
   private StopperState mState;
 
   public ElevatorStopper() {
-    stopperSolenoid.set(false);
+    stopperSolenoid.set(true); //false //set to true and then set button to reverse so true = false jack pls 
     mState = StopperState.STOP;
   }
 
@@ -40,7 +40,7 @@ public class ElevatorStopper {
   }
 
   public enum StopperState {
-    GO(true), STOP(false);
+    GO(false), STOP(true); //true, false
 
     public final boolean state;
 
