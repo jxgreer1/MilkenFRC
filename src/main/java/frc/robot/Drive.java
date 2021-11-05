@@ -75,7 +75,7 @@ public class Drive {
     /* Set acceleration and vcruise velocity - see documentation */
     //help oh please god help
     //is god real? or is jack god?
-    //what do these accomplish, and why should i give a shit about them - question for swerdlow
+    //what do these accomplish, and why should i give a shit about them - question for Jack
     leftMaster.configMotionCruiseVelocity(DRIVE.kMotionMagicStraightVel);
     leftMaster.configMotionAcceleration(DRIVE.kMotionMagicStraightAccel);
     leftMaster.configAllowableClosedloopError(0, 1);

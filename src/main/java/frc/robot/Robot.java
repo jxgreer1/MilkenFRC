@@ -101,13 +101,14 @@ public class Robot extends TimedRobot {
       case BACK:
         m_autonomousCommand = new BackAuto();
       case NOTHING:
-        //TODO: This may break things. Test this.
+        
         break;
     }
     if (m_autonomousCommand != null) {
       m_autonomousCommand.schedule();
     }
   }
+
 
   @Override
   public void autonomousPeriodic() {
@@ -256,12 +257,12 @@ public class Robot extends TimedRobot {
 
   @Override
   public void testInit() {
-    //TODO: Michael Do Things Here
+    
   }
 
   @Override
   public void testPeriodic() {
-    //TODO: Michael Do Things Here
+    
   }
 
   public enum AutoPosition {

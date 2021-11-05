@@ -57,7 +57,7 @@ public class Limelight {
     Shooter.getInstance().setHoodPos(limit(hoodDist, -3.25, 0));
     double distance_mod = Constants.VISION.kElevatorDistanceConst * Limelight.getInstance().getDistance();
     double rpm_mod = VISION.kElevatorRpmConst * (RPM - Shooter.getInstance().getShooterRPM());
-    Elevator.getInstance().setElevatorOutput(limit(0.43 - distance_mod, 0.2, 1.0)); // 60  this ---- what the hell does this accomplish, imma ask swerd maybe, also maybe gonna remove it and set it to 1 instead of limit math thing
+    Elevator.getInstance().setElevatorOutput(limit(0.40 - distance_mod, 0.2, 1.0)); //BEN-SLOWER IS FUCKING BETTER CAUSE IT WONT SLIP CAUSE RUBIN CANT USE CHAIN    60  this ---- what the hell does this accomplish, imma ask swerd maybe, also maybe gonna remove it and set it to 1 instead of limit math thing
     if ((ignoreAim || inRange()) && Math.abs(Shooter.getInstance().getShooterRPM() - RPM) < 30) { // 30 base
       ElevatorStopper.getInstance().setStopper(ElevatorStopper.StopperState.GO); //stops instead go since reversed
       Shooter.getInstance().setShootingMode(ignoreAim ? Shooter.ShootingMode.AUTO_SHOOTING_IGNORING_AIM : Shooter.ShootingMode.AUTO_SHOOTING_AIMED);
@@ -75,7 +75,7 @@ public class Limelight {
     double turn_output = 0;
     if (Math.abs(horizontal_angle) > VISION.kAimAngleDeadband) {
       //how the hell do you know trapezoid profile and where did you even learn it 
-      TrapezoidProfile trap = new TrapezoidProfile(constraints, new TrapezoidProfile.State(0, 0));
+      TrapezoidProfile trap = new TrapezoidProfile(constraints, new TrapezoidProfile.State(0, 0)); //https://docs.wpilib.org/en/stable/docs/software/advanced-controls/controllers/profiled-pidcontroller.html
       double turn_controllout_out = m_turn_controller.calculate(-horizontal_angle, 0);
       double feedforward = ((1.0) / (VISION.kMaxAimAngularVel)) * trap.calculate(Constants.kDt).velocity;
       turn_output = MkUtil.limitAbsolute(turn_controllout_out + feedforward, Constants.VISION.kMaxAutoAimOutput);
