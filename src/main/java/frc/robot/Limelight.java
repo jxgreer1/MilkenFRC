@@ -84,7 +84,7 @@ public class Limelight {
   }
 
   public double getDistance() {
-    return distance;
+    return distance; 
   }
 
   public void toggleLED() {
