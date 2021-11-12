@@ -78,6 +78,7 @@ public class Limelight {
       TrapezoidProfile trap = new TrapezoidProfile(constraints, new TrapezoidProfile.State(0, 0)); //https://docs.wpilib.org/en/stable/docs/software/advanced-controls/controllers/profiled-pidcontroller.html
       double turn_controllout_out = m_turn_controller.calculate(-horizontal_angle, 0);
       double feedforward = ((1.0) / (VISION.kMaxAimAngularVel)) * trap.calculate(Constants.kDt).velocity;
+      SmartDashboard.putNumber("feedforward", feedforward);
       turn_output = MkUtil.limitAbsolute(turn_controllout_out + feedforward, Constants.VISION.kMaxAutoAimOutput);
     }
     Drive.getInstance().setOutput(new DriveSignal(turn_output, -turn_output));
