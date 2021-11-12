@@ -79,7 +79,7 @@ public class Drive {
     leftMaster.configMotionCruiseVelocity(DRIVE.kMotionMagicStraightVel);
     leftMaster.configMotionAcceleration(DRIVE.kMotionMagicStraightAccel);
     leftMaster.configAllowableClosedloopError(0, 1);
-    leftMaster.configNeutralDeadband(0.001);
+    leftMaster.configNeutralDeadband(0.001); //arent these and the one above useless because of their small value??
     leftMaster.setStatusFramePeriod(StatusFrame.Status_1_General, 10);
     leftMaster.setStatusFramePeriod(StatusFrame.Status_2_Feedback0, 10);
     leftMaster.configClosedLoopPeakOutput(0, 1.0);
