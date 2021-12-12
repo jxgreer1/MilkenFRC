@@ -23,7 +23,7 @@ public class ElevatorStopper {
       setStopper(StopperState.STOP);
     }
   }
-
+// but why ?
   public void setStopper(StopperState state) {
     if (state != mState) {
       stopperSolenoid.set(state.state);
