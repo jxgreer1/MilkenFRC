@@ -1,5 +1,5 @@
 # MilkenKnights-InfiniteRecharge
  The MilkenKnights Code Repo for 2020
 
-- if 80% soft locked or 86% soft locked, terminate
-task, build, then deploy (might not work but do it)
+Orginally forked from https://github.com/themilkenknights/MilkenKnights-InfiniteRecharge 
+This is just our version due to COVID and all the other coders have graduated
